@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lux | Chat Vendedor</title>
+    <link href="CSS/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="Imagenes/Lux-white.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/chatvendedor.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="Imagenes/Lux-white.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="perfilDropdown">
+                            <li><a class="dropdown-item" href="nuevoProducto.html">Nuevo Producto</a></li>
+                            <li><a class="dropdown-item" href="nuevaCategoria.html">Nueva Categoria</a></li>
+                            <li><a class="dropdown-item" href="ventas.html">Ventas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfilVendedor.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chatVendedor.html">Chats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalCerrarSesion">Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="chat-container">
+            <div class="chat-list">
+                <div class="chat-list-item text-center">
+                    Nombre de usuario 1
+                </div>
+                <div class="chat-list-item text-center">
+                    Nombre de usuario 2
+                </div>
+                <div class="chat-list-item text-center">
+                    Nombre de usuario 3
+                </div>
+                <div class="chat-list-item text-center">
+                    Nombre de usuario 4
+                </div>
+            </div>
+
+            <div class="chat-conversation">
+                <div class="chat-header">
+                    Nombre del chat seleccionado
+                </div>
+                <div class="chat-body">
+                    <div class="chat-message">
+                        <img src="Imagenes/avatar.png" alt="Perfil comprador">
+                        <div class="message-text">
+                            <span>Hola, quisiera cotizar un producto</span>
+                        </div>
+                    </div>
+                    <div class="chat-message me">
+                        <div class="message-text me">
+                            <span>Hola! Gracias por su preferencia</span>
+                        </div>
+                        <img src="Imagenes/avatar.png" alt="Perfil vendedor">
+                    </div>
+                    <div class="chat-message me">
+                        <div class="list-item">
+                            <img src="Imagenes/taza.jpg" alt="Imagen 1">
+                        <div class="info-wish">
+                            <span>Taza</span>
+                            <h4>$25.00</h4>
+                        </div>                       
+                    </div>
+                        <img src="Imagenes/avatar.png" alt="Perfil vendedor">
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" class="form-control chat-input" placeholder="Escribe un mensaje">
+                    <button class="send-button">Enviar</button>
+                    <button href="#" data-bs-toggle="modal" data-bs-target="#modalLista" class="send-button">Nuevo pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal pedido -->
+<div class="modal fade modal-lg" id="modalLista" aria-labelledby="modalListaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nuevo pedido</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="productoForm" action="#" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="nombre" class="form-label">Nombre del Producto</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                    
+                                    <label for="descripcion" class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+                                    
+                                    <label for="cantidad" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="cantidad" name="cantidad" required>
+
+                                    <div class="mb-3" id="precioGroup">
+                                        <label for="precio" class="form-label">Precio</label>
+                                        <input type="text" class="form-control" id="precio" name="precio">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="idCategoria" class="form-label">Categoría</label>
+                                    <select id="idCategoria" name="idCategoria" class="form-select">
+                                        <option>Decoración</option>
+                                        <option>Ropa</option>
+                                        <option>Videojuegos</option>
+                                        <option>Accesorios</option>
+                                        <option>Papelería</option>
+                                    </select>
+                                    
+                                    <div id="imagenContainer">
+                                        <label class="form-label">Imágenes</label>
+                                        <input type="file" class="form-control" id="imagen1" name="imagenes[]" accept="image/*" onchange="previewImage(this)">
+                                    </div>
+                                    <div id="previewImagenes" class="mt-2"></div>
+                                    
+                                    <label for="video" class="form-label">Video</label>
+                                    <input type="file" class="form-control" id="video" name="video" accept="video/*" onchange="previewVideo(this)">
+                                    <div id="previewVideo" class="mt-2"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="send-button" data-bs-dismiss="modal">Cancelar</button>
+                <a href="#" class="send-button">Guardar</a>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Modal para cerrar sesión -->
+<div class="modal fade" id="modalCerrarSesion" tabindex="-1" aria-labelledby="modalCerrarSesionLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCerrarSesionLabel">Cerrar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas cerrar sesión?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="send-button" data-bs-dismiss="modal">Cancelar</button>
+                    <a href="login.html" class="send-button">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

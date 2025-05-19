@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/nuevo.css">
+    <link rel="icon" href="Imagenes/Lux-white.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="Imagenes/Lux-white.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="perfilDropdown">
+                            <li><a class="dropdown-item" href="nuevoProducto.html">Nuevo Producto</a></li>
+                            <li><a class="dropdown-item" href="nuevaCategoria.html">Nueva Categoria</a></li>
+                            <li><a class="dropdown-item" href="ventas.html">Ventas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfilVendedor.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chatVendedor.html">Chats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalCerrarSesion">Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="historial-container">
+            <h1>Ventas</h1>
+            <form class="filtro-form">
+                <input class="form-control" type="date" name="fecha_inicio" placeholder="Fecha Inicio">
+                <input class="form-control" type="date" name="fecha_fin" placeholder="Fecha Fin">
+                <select id="idCategoria" name="idCategoria" class="form-control" aria-label="Default select example">
+                    <option>Decoración</option>
+                    <option>Ropa</option>
+                    <option>Videojuegos</option>
+                    <option>Accesorios</option>
+                    <option>Papelería</option>     
+                </select>
+                <button class="btn" type="submit">Filtrar</button>
+            </form>
+        
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fecha y Hora</th>
+                            <th>Categoría</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Discponibles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-09-09 14:30</td>
+                            <td>Electrónica</td>
+                            <td>Smartphone XYZ</td>
+                            <td>$299.99</td>
+                            <td>400</td>
+        
+                        </tr>
+                        <tr>
+                            <td>2024-09-08 10:15</td>
+                            <td>Ropa</td>
+                            <td>Camisa Azul</td>
+                            <td>$3.000</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
+</div>
+     <!-- Modal para cerrar sesión -->
+<div class="modal fade" id="modalCerrarSesion" tabindex="-1" aria-labelledby="modalCerrarSesionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCerrarSesionLabel">Cerrar Sesión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas cerrar sesión?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+                <a href="login.html" class="btn">Cerrar Sesión</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
